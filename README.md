@@ -5,7 +5,7 @@ Create side and top bars in tmux easily, along with a "devour" style command.
 ![TDAB logo](https://github.com/uriel1998/tdab/raw/main/tdab-open-graph.png "logo")
 
 ![TDAB demo](https://raw.githubusercontent.com/uriel1998/tdab/main/tdab_example.gif "demo")
-https://raw.githubusercontent.com/uriel1998/vindauga/master/output.gif
+
 You can see a larger version of the demo with the [included MKV file](https://github.com/uriel1998/tdab/blob/main/tdab_example.mkv?raw=true).
 
 ## Contents
