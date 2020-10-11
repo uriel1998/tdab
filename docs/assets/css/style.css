@@ -3,6 +3,16 @@
 
 @import "{{ site.theme }}";
 
+
+  nav {
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 0 10px;
+    rgba(255, 165, 0, 0);
+    margin: 6px auto;
+    opacity: 0.0;
+}
+
 &.fork {
     float: left;
     margin-left: 2px;
