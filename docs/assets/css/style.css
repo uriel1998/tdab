@@ -4,7 +4,7 @@
 @import "{{ site.theme }}";
 
 #header {
-margin: 0 auto;
+margin: 0 auto !important;
 }
 
 #header > nav {
@@ -13,15 +13,13 @@ margin: 0 auto;
 }
 
 #header > nav > li {
-    float: left;
-    margin-left: 5px;
-    margin-right: 5px;
+    margin-left: 5px !important;
+    margin-right: 5px !important;
 }
 
 
+
 &.fork {
-    float: left;
-    padding: 1em;
-    margin-left: 5px;
-    margin-right: 5px;
+    margin-left: 5px !important;
+    margin-right: 5px !important;
 }
