@@ -1,0 +1,17 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+&.fork {
+    float: left;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+
+&.id {
+    float: right;
+    margin-left: 1px;
+    margin-right: 1px;
+}
