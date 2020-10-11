@@ -3,13 +3,25 @@
 
 @import "{{ site.theme }}";
 
+#header {
+margin: 0 auto;
+}
 
 #header > nav {
+    margin: 0 auto;
     background: none !important;
 }
 
 #header > nav > li {
     float: left;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+
+&.fork {
+    float: left;
+    padding: 1em;
     margin-left: 5px;
     margin-right: 5px;
 }
