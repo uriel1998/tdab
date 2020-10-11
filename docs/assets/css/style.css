@@ -7,21 +7,21 @@
   nav {
     max-width: 650px;
     margin: 0 auto;
-    padding: 0 10px;
-    rgba(255, 165, 0, 0);
+    padding: 0 10px 0;
+    background: rgba(255, 165, 0, 0) !important;
     margin: 6px auto;
-    opacity: 0.0;
+    opacity: 0;
 }
 
 &.fork {
     float: left;
-    margin-left: 2px;
-    margin-right: 2px;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 
 &.id {
     float: right;
-    margin-left: 1px;
-    margin-right: 1px;
+    margin-left: 3px;
+    margin-right: 3px;
 }
