@@ -12,14 +12,4 @@ margin: 0 auto !important;
     background: none !important;
 }
 
-#header > nav > li {
-    margin-left: 5px !important;
-    margin-right: 5px !important;
-}
 
-
-
-&.fork {
-    margin-left: 5px !important;
-    margin-right: 5px !important;
-}
