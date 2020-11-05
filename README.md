@@ -54,6 +54,16 @@ columns wide, then resizes it *to the right* an additional 30 columns so that
 I end up with a 127/67 split.  The same thing goes for the topbar, except it 
 resizes upward (-U).  Adjust so that they work for your terminal size.
 
+### Tip for `Devour`
+
+I find a binding like the following *very* useful when using `devour`:
+
+`bind-key -n C-/ select-pane -R \;\`
+`resize-pane -Z`
+
+This will allow you to cycle among the zoomed panes - and will zoom each as you 
+go through it.  Very nice for programs like [emojin](https://github.com/peterjschroeder/emojin). 
+
 ## 5. Usage
 
 `SCRIPTNAME [program to run]`
