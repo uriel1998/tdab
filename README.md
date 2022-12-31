@@ -71,6 +71,10 @@ go through it.  Very nice for programs like [emojin](https://github.com/peterjsc
 For example, `tmux-sidebar.sh man man` will show you the man page for man in 
 the sidebar.
 
+If the *first* argument is either `-h` or `--hold` then TDAB will pause after 
+executing the program and wait for you to hit a key (necessary for programs that 
+exit immediately, which triggers the pane closing). 
+
 If you run the scripts outside of tmux, it will just run the command.
 
 ### tmux_devour.sh
