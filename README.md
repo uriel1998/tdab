@@ -14,7 +14,7 @@ You can see a larger version of the demo with the [included MKV file](https://gi
  3. [Prerequisites](#3-prerequisites)
  4. [Installation](#4-installation)
  5. [Usage](#5-usage)
- 6. [TODO](#6-todo)
+ 6. [Examples](#6-examples)
 
 ***
 
@@ -59,7 +59,7 @@ go through it.  Very nice for programs like [emojin](https://github.com/peterjsc
 `SCRIPTNAME [--offset NUMBER] [--hold] [program to run]`
 
 For example, `tmux-sidebar.sh man man` will show you the man page for man in 
-the sidebar.
+the sidebar.  
 
 **The optional command line arguments are POSITIONAL.** 
 
@@ -90,5 +90,28 @@ Create a sidebar (e.g. for reading manpages) and kill when done.
 
 Create a vertical split and kill when done.
 
-## 6. TODO
+## 6. Examples
+
+Aside from invoking on the command line, I've found a couple of short wrapper scripts 
+really make a difference, particularly if you want a specific setup.
+
+To call your editor in a new, full-screen pane (leaving the initial pane alone):
+
+`/home/steven/bin/tmux_devour.sh /usr/bin/micro "${@}"`
+
+To bring up [my address book searcher](https://github.com/uriel1998/ppl_virdirsyncer_addysearch) in a small topbar when I'm working in the 
+main window:
+
+`/home/steven/bin/tmux_topbar.sh --offset 80 pplsearch -c`
+
+To bring up newsboat, with a sidebar showing a cheat sheet of things I forget using 
+[rich-cli](https://github.com/Textualize/rich-cli), then closing it when I'm done.
+
+
+```
+/home/steven/bin/tmux_sidebar.sh rich -m /home/steven/cheatsheet/newsboat.md --pager 
+newsboat
+sidebarpid=$(ps aux | grep "rich -m /home/steven/cheatsheet/newsboat.md" | grep -v grep | awk '{print $2}')
+kill $sidebarpid
+```
 
