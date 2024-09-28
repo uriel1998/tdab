@@ -12,7 +12,15 @@ lines=$(tput lines)
     divide_and_round_up() {                                                                                                                                   
         echo "scale=2; ($1 + $2 - 1) / $2" | bc -l | awk '{printf("%d\n",$0+0.5)}'
     }  
+  
 
+# if percent of offset (
+offset=1.4
+    if [ "$1" == "--offset" ] || [ "$1" == "-o" ];then
+        shift
+        offset=$(bc -l  <<<"scale=2;(2-$1/50)+1")
+        shift
+    fi
 
     HOLD_VAR=""
     if [ "$1" == "--hold" ] || [ "$1" == "-h" ];then
@@ -24,7 +32,7 @@ lines=$(tput lines)
     c_tmux=$(env | grep -c TMUX)
     if [ $c_tmux -gt 0 ];then
         half_lines=$(divide_and_round_up $lines 2)
-        one_fifth=$(divide_and_round_up $lines 1.4)
+        one_fifth=$(divide_and_round_up $lines $offset)
         move_height=$(( one_fifth-half_lines))    
         command=$(echo "$@")
         o_pane=$(tmux list-panes -F "#D")

@@ -8,12 +8,21 @@
 #
 ##############################################################################
 # maybe use these to dynamically change width?
-    cols=$(tput cols)
+cols=$(tput cols)
 
 
     divide_and_round_up() {                                                                                                                                   
         echo "scale=2; ($1 + $2 - 1) / $2" | bc -l | awk '{printf("%d\n",$0+0.5)}'
     }  
+
+
+# if percent of offset (
+offset=1.5
+    if [ "$1" == "--offset" ] || [ "$1" == "-o" ];then
+        shift
+        offset=$(bc -l  <<<"scale=2;(2-$1/50)+1")
+        shift
+    fi
 
     HOLD_VAR=""
     if [ "$1" == "--hold" ] || [ "$1" == "-h" ];then
@@ -24,7 +33,7 @@
     c_tmux=$(env | grep -c TMUX)
     if [ $c_tmux -gt 0 ];then
         half_cols=$(divide_and_round_up $cols 2)
-        one_third=$(divide_and_round_up $cols 1.33)
+        one_third=$(divide_and_round_up $cols $offset)
         move_width=$(( one_third-half_cols ))
         command=$(echo "$@")
         o_pane=$(tmux list-panes -F "#D")
