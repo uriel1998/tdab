@@ -3,9 +3,9 @@
 ##############################################################################
 #
 #   tmux-topbar
-#   (c) Steven Saus 2020
+#   (c) Steven Saus 2025
 #   Licensed under the MIT license
-#
+#  --fixed [offset] | --offset [percent] --hold --bottom
 ##############################################################################
 lines=$(tput lines)
 
@@ -79,7 +79,6 @@ fi
             fi
         fi
         printf '\033]2;%s\033\\' 'topbar'
-        echo "c $c_pane $move_height"
         if [ "$HOLD_VAR" == "True" ];then
             command2=$(echo "eval \"${command}\"  ; read ; tmux kill-pane -t ${c_pane}")
         else
