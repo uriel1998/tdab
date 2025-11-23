@@ -80,7 +80,7 @@ If you set the environment variable `tdab_focus` to true, the sidebar and topbar
 will be *focused* upon launching; default is to switch back to the original pane. 
 Either set it globally or immediately before calling, e.g. 
 
-`export tdab_focus=true;tmux-topbar.sh --offset 90 man man`
+`export tdab_focus=true;tmux-topbar.sh --offset 90 man man;export tdab_focus=""`
 
 
 If you run the scripts outside of tmux, it will just run the command.
