@@ -76,6 +76,13 @@ If the *second* argument is either `-h` or `--hold` then TDAB will pause after
 executing the program and wait for you to hit a key (necessary for programs that 
 exit immediately, which triggers the pane closing). 
 
+If you set the environment variable `tdab_focus` to true, the sidebar and topbar
+will be *focused* upon launching; default is to switch back to the original pane. 
+Either set it globally or immediately before calling, e.g. 
+
+`export tdab_focus=true;tmux-topbar.sh --offset 90 man man`
+
+
 If you run the scripts outside of tmux, it will just run the command.
 
 ### tmux_devour.sh

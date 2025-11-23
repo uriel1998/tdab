@@ -56,7 +56,9 @@ offset=1.5
             command2=$(echo "eval \"${command}\" ; tmux kill-pane -t ${c_pane}")
         fi
         tmux send-keys -t "$c_pane" "$command2" C-m
-        tmux last-pane
+        if [ "$tdab_focus" != "true" ];then 
+			tmux last-pane
+		fi
     else
         eval "$@"
     fi
